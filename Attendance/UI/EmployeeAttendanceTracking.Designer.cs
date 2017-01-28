@@ -40,7 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.attendanceTab = new System.Windows.Forms.TabPage();
-            this.connectionTab = new System.Windows.Forms.TabPage();
+            this.providerNameTextBox = new System.Windows.Forms.TabPage();
             this.defaultRadioButton = new System.Windows.Forms.RadioButton();
             this.configureManuallyradioButton = new System.Windows.Forms.RadioButton();
             this.dbConnectionConfigGroupBox = new System.Windows.Forms.GroupBox();
@@ -55,18 +55,51 @@
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.attendanceGroupBox = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.employeeNameLabel = new System.Windows.Forms.Label();
+            this.attendanceLabelStatus = new System.Windows.Forms.Label();
+            this.employeeIdLabel = new System.Windows.Forms.Label();
+            this.timeAndDateLabel = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comPortComboBox = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.baudRateComboBox = new System.Windows.Forms.ComboBox();
+            this.applySerialConfigButton = new System.Windows.Forms.Button();
+            this.connectButton = new System.Windows.Forms.Button();
+            this.disconnectButton = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.serverNameTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dbUserIdTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dbPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dbNameTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.applyDbConfigButton = new System.Windows.Forms.Button();
             this.employeeAttendanceTabControl.SuspendLayout();
             this.authenticationTab.SuspendLayout();
             this.authenticationGroupBox.SuspendLayout();
-            this.connectionTab.SuspendLayout();
+            this.attendanceTab.SuspendLayout();
+            this.providerNameTextBox.SuspendLayout();
+            this.dbConnectionConfigGroupBox.SuspendLayout();
+            this.serialPortConfigGroupBox.SuspendLayout();
             this.employeeAttendancemenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.attendanceGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // employeeAttendanceTabControl
             // 
             this.employeeAttendanceTabControl.Controls.Add(this.authenticationTab);
             this.employeeAttendanceTabControl.Controls.Add(this.attendanceTab);
-            this.employeeAttendanceTabControl.Controls.Add(this.connectionTab);
+            this.employeeAttendanceTabControl.Controls.Add(this.providerNameTextBox);
             this.employeeAttendanceTabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.employeeAttendanceTabControl.Location = new System.Drawing.Point(0, 27);
             this.employeeAttendanceTabControl.Name = "employeeAttendanceTabControl";
@@ -181,6 +214,7 @@
             // 
             // attendanceTab
             // 
+            this.attendanceTab.Controls.Add(this.attendanceGroupBox);
             this.attendanceTab.Location = new System.Drawing.Point(4, 22);
             this.attendanceTab.Name = "attendanceTab";
             this.attendanceTab.Padding = new System.Windows.Forms.Padding(3);
@@ -189,19 +223,21 @@
             this.attendanceTab.Text = "Attendance";
             this.attendanceTab.UseVisualStyleBackColor = true;
             // 
-            // connectionTab
+            // providerNameTextBox
             // 
-            this.connectionTab.Controls.Add(this.defaultRadioButton);
-            this.connectionTab.Controls.Add(this.configureManuallyradioButton);
-            this.connectionTab.Controls.Add(this.dbConnectionConfigGroupBox);
-            this.connectionTab.Controls.Add(this.serialPortConfigGroupBox);
-            this.connectionTab.Location = new System.Drawing.Point(4, 22);
-            this.connectionTab.Name = "connectionTab";
-            this.connectionTab.Padding = new System.Windows.Forms.Padding(3);
-            this.connectionTab.Size = new System.Drawing.Size(725, 345);
-            this.connectionTab.TabIndex = 0;
-            this.connectionTab.Text = "Connection";
-            this.connectionTab.UseVisualStyleBackColor = true;
+            this.providerNameTextBox.Controls.Add(this.disconnectButton);
+            this.providerNameTextBox.Controls.Add(this.connectButton);
+            this.providerNameTextBox.Controls.Add(this.defaultRadioButton);
+            this.providerNameTextBox.Controls.Add(this.configureManuallyradioButton);
+            this.providerNameTextBox.Controls.Add(this.dbConnectionConfigGroupBox);
+            this.providerNameTextBox.Controls.Add(this.serialPortConfigGroupBox);
+            this.providerNameTextBox.Location = new System.Drawing.Point(4, 22);
+            this.providerNameTextBox.Name = "providerNameTextBox";
+            this.providerNameTextBox.Padding = new System.Windows.Forms.Padding(3);
+            this.providerNameTextBox.Size = new System.Drawing.Size(725, 345);
+            this.providerNameTextBox.TabIndex = 0;
+            this.providerNameTextBox.Text = "Connection";
+            this.providerNameTextBox.UseVisualStyleBackColor = true;
             // 
             // defaultRadioButton
             // 
@@ -228,6 +264,17 @@
             // 
             // dbConnectionConfigGroupBox
             // 
+            this.dbConnectionConfigGroupBox.Controls.Add(this.applyDbConfigButton);
+            this.dbConnectionConfigGroupBox.Controls.Add(this.textBox1);
+            this.dbConnectionConfigGroupBox.Controls.Add(this.label15);
+            this.dbConnectionConfigGroupBox.Controls.Add(this.dbNameTextBox);
+            this.dbConnectionConfigGroupBox.Controls.Add(this.label14);
+            this.dbConnectionConfigGroupBox.Controls.Add(this.dbPasswordTextBox);
+            this.dbConnectionConfigGroupBox.Controls.Add(this.label13);
+            this.dbConnectionConfigGroupBox.Controls.Add(this.dbUserIdTextBox);
+            this.dbConnectionConfigGroupBox.Controls.Add(this.label12);
+            this.dbConnectionConfigGroupBox.Controls.Add(this.serverNameTextBox);
+            this.dbConnectionConfigGroupBox.Controls.Add(this.label11);
             this.dbConnectionConfigGroupBox.Location = new System.Drawing.Point(364, 56);
             this.dbConnectionConfigGroupBox.Name = "dbConnectionConfigGroupBox";
             this.dbConnectionConfigGroupBox.Size = new System.Drawing.Size(353, 243);
@@ -237,6 +284,11 @@
             // 
             // serialPortConfigGroupBox
             // 
+            this.serialPortConfigGroupBox.Controls.Add(this.applySerialConfigButton);
+            this.serialPortConfigGroupBox.Controls.Add(this.baudRateComboBox);
+            this.serialPortConfigGroupBox.Controls.Add(this.label10);
+            this.serialPortConfigGroupBox.Controls.Add(this.comPortComboBox);
+            this.serialPortConfigGroupBox.Controls.Add(this.label9);
             this.serialPortConfigGroupBox.Location = new System.Drawing.Point(8, 56);
             this.serialPortConfigGroupBox.Name = "serialPortConfigGroupBox";
             this.serialPortConfigGroupBox.Size = new System.Drawing.Size(350, 243);
@@ -309,14 +361,274 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem1.Text = "About";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // attendanceGroupBox
+            // 
+            this.attendanceGroupBox.Controls.Add(this.timeAndDateLabel);
+            this.attendanceGroupBox.Controls.Add(this.employeeIdLabel);
+            this.attendanceGroupBox.Controls.Add(this.label8);
+            this.attendanceGroupBox.Controls.Add(this.attendanceLabelStatus);
+            this.attendanceGroupBox.Controls.Add(this.label7);
+            this.attendanceGroupBox.Controls.Add(this.employeeNameLabel);
+            this.attendanceGroupBox.Controls.Add(this.label6);
+            this.attendanceGroupBox.Controls.Add(this.label5);
+            this.attendanceGroupBox.Controls.Add(this.pictureBox1);
+            this.attendanceGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attendanceGroupBox.Location = new System.Drawing.Point(8, 6);
+            this.attendanceGroupBox.Name = "attendanceGroupBox";
+            this.attendanceGroupBox.Size = new System.Drawing.Size(709, 336);
+            this.attendanceGroupBox.TabIndex = 1;
+            this.attendanceGroupBox.TabStop = false;
+            this.attendanceGroupBox.Text = "Attendance";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(206, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 22);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Employee Name";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(190, 106);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 22);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Attendance Status";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(236, 71);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 22);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Employee ID";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(219, 141);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(128, 22);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Time and Date";
+            // 
+            // employeeNameLabel
+            // 
+            this.employeeNameLabel.AutoSize = true;
+            this.employeeNameLabel.Location = new System.Drawing.Point(366, 36);
+            this.employeeNameLabel.Name = "employeeNameLabel";
+            this.employeeNameLabel.Size = new System.Drawing.Size(0, 22);
+            this.employeeNameLabel.TabIndex = 1;
+            // 
+            // attendanceLabelStatus
+            // 
+            this.attendanceLabelStatus.AutoSize = true;
+            this.attendanceLabelStatus.Location = new System.Drawing.Point(366, 106);
+            this.attendanceLabelStatus.Name = "attendanceLabelStatus";
+            this.attendanceLabelStatus.Size = new System.Drawing.Size(0, 22);
+            this.attendanceLabelStatus.TabIndex = 2;
+            // 
+            // employeeIdLabel
+            // 
+            this.employeeIdLabel.AutoSize = true;
+            this.employeeIdLabel.Location = new System.Drawing.Point(366, 71);
+            this.employeeIdLabel.Name = "employeeIdLabel";
+            this.employeeIdLabel.Size = new System.Drawing.Size(0, 22);
+            this.employeeIdLabel.TabIndex = 3;
+            // 
+            // timeAndDateLabel
+            // 
+            this.timeAndDateLabel.AutoSize = true;
+            this.timeAndDateLabel.Location = new System.Drawing.Point(366, 141);
+            this.timeAndDateLabel.Name = "timeAndDateLabel";
+            this.timeAndDateLabel.Size = new System.Drawing.Size(0, 22);
+            this.timeAndDateLabel.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(38, 40);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "COM Port";
+            // 
+            // comPortComboBox
+            // 
+            this.comPortComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comPortComboBox.FormattingEnabled = true;
+            this.comPortComboBox.Location = new System.Drawing.Point(98, 37);
+            this.comPortComboBox.Name = "comPortComboBox";
+            this.comPortComboBox.Size = new System.Drawing.Size(154, 21);
+            this.comPortComboBox.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(33, 67);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Baud Rate";
+            // 
+            // baudRateComboBox
+            // 
+            this.baudRateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.baudRateComboBox.FormattingEnabled = true;
+            this.baudRateComboBox.Location = new System.Drawing.Point(98, 64);
+            this.baudRateComboBox.Name = "baudRateComboBox";
+            this.baudRateComboBox.Size = new System.Drawing.Size(154, 21);
+            this.baudRateComboBox.TabIndex = 1;
+            // 
+            // applySerialConfigButton
+            // 
+            this.applySerialConfigButton.Location = new System.Drawing.Point(177, 91);
+            this.applySerialConfigButton.Name = "applySerialConfigButton";
+            this.applySerialConfigButton.Size = new System.Drawing.Size(75, 23);
+            this.applySerialConfigButton.TabIndex = 2;
+            this.applySerialConfigButton.Text = "Apply";
+            this.applySerialConfigButton.UseVisualStyleBackColor = true;
+            // 
+            // connectButton
+            // 
+            this.connectButton.BackColor = System.Drawing.Color.Green;
+            this.connectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.connectButton.ForeColor = System.Drawing.Color.White;
+            this.connectButton.Location = new System.Drawing.Point(619, 6);
+            this.connectButton.Name = "connectButton";
+            this.connectButton.Size = new System.Drawing.Size(98, 43);
+            this.connectButton.TabIndex = 3;
+            this.connectButton.Text = "Connect";
+            this.connectButton.UseVisualStyleBackColor = false;
+            // 
+            // disconnectButton
+            // 
+            this.disconnectButton.BackColor = System.Drawing.Color.Maroon;
+            this.disconnectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.disconnectButton.ForeColor = System.Drawing.SystemColors.Menu;
+            this.disconnectButton.Location = new System.Drawing.Point(515, 6);
+            this.disconnectButton.Name = "disconnectButton";
+            this.disconnectButton.Size = new System.Drawing.Size(98, 43);
+            this.disconnectButton.TabIndex = 3;
+            this.disconnectButton.Text = "Disconnect";
+            this.disconnectButton.UseVisualStyleBackColor = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(86, 40);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Server";
+            // 
+            // serverNameTextBox
+            // 
+            this.serverNameTextBox.Location = new System.Drawing.Point(125, 37);
+            this.serverNameTextBox.Name = "serverNameTextBox";
+            this.serverNameTextBox.Size = new System.Drawing.Size(180, 20);
+            this.serverNameTextBox.TabIndex = 1;
+            this.serverNameTextBox.Text = "127.0.0.1";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(83, 68);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "User Id";
+            // 
+            // dbUserIdTextBox
+            // 
+            this.dbUserIdTextBox.Location = new System.Drawing.Point(125, 65);
+            this.dbUserIdTextBox.Name = "dbUserIdTextBox";
+            this.dbUserIdTextBox.Size = new System.Drawing.Size(180, 20);
+            this.dbUserIdTextBox.TabIndex = 1;
+            this.dbUserIdTextBox.Text = "root";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(71, 96);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Password";
+            // 
+            // dbPasswordTextBox
+            // 
+            this.dbPasswordTextBox.Location = new System.Drawing.Point(125, 93);
+            this.dbPasswordTextBox.Name = "dbPasswordTextBox";
+            this.dbPasswordTextBox.PasswordChar = '*';
+            this.dbPasswordTextBox.Size = new System.Drawing.Size(180, 20);
+            this.dbPasswordTextBox.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(40, 124);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Database Name";
+            // 
+            // dbNameTextBox
+            // 
+            this.dbNameTextBox.Location = new System.Drawing.Point(125, 121);
+            this.dbNameTextBox.Name = "dbNameTextBox";
+            this.dbNameTextBox.Size = new System.Drawing.Size(180, 20);
+            this.dbNameTextBox.TabIndex = 1;
+            this.dbNameTextBox.Text = "employee_db";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(40, 150);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(77, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Provider Name";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(125, 147);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(180, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "MySql.Data.MySqlClient";
+            // 
+            // applyDbConfigButton
+            // 
+            this.applyDbConfigButton.Location = new System.Drawing.Point(230, 173);
+            this.applyDbConfigButton.Name = "applyDbConfigButton";
+            this.applyDbConfigButton.Size = new System.Drawing.Size(75, 23);
+            this.applyDbConfigButton.TabIndex = 2;
+            this.applyDbConfigButton.Text = "Apply";
+            this.applyDbConfigButton.UseVisualStyleBackColor = true;
             // 
             // EmployeeAttendanceTracking
             // 
@@ -338,10 +650,18 @@
             this.authenticationTab.PerformLayout();
             this.authenticationGroupBox.ResumeLayout(false);
             this.authenticationGroupBox.PerformLayout();
-            this.connectionTab.ResumeLayout(false);
-            this.connectionTab.PerformLayout();
+            this.attendanceTab.ResumeLayout(false);
+            this.providerNameTextBox.ResumeLayout(false);
+            this.providerNameTextBox.PerformLayout();
+            this.dbConnectionConfigGroupBox.ResumeLayout(false);
+            this.dbConnectionConfigGroupBox.PerformLayout();
+            this.serialPortConfigGroupBox.ResumeLayout(false);
+            this.serialPortConfigGroupBox.PerformLayout();
             this.employeeAttendancemenuStrip.ResumeLayout(false);
             this.employeeAttendancemenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.attendanceGroupBox.ResumeLayout(false);
+            this.attendanceGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,7 +670,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl employeeAttendanceTabControl;
-        private System.Windows.Forms.TabPage connectionTab;
+        private System.Windows.Forms.TabPage providerNameTextBox;
         private System.Windows.Forms.TabPage attendanceTab;
         private System.Windows.Forms.RadioButton defaultRadioButton;
         private System.Windows.Forms.TabPage authenticationTab;
@@ -376,5 +696,33 @@
         private System.Windows.Forms.RadioButton configureManuallyradioButton;
         private System.Windows.Forms.GroupBox dbConnectionConfigGroupBox;
         private System.Windows.Forms.GroupBox serialPortConfigGroupBox;
+        private System.Windows.Forms.GroupBox attendanceGroupBox;
+        private System.Windows.Forms.Label timeAndDateLabel;
+        private System.Windows.Forms.Label employeeIdLabel;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label attendanceLabelStatus;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label employeeNameLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comPortComboBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox baudRateComboBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button applySerialConfigButton;
+        private System.Windows.Forms.Button connectButton;
+        private System.Windows.Forms.Button disconnectButton;
+        private System.Windows.Forms.TextBox dbUserIdTextBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox serverNameTextBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox dbPasswordTextBox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox dbNameTextBox;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button applyDbConfigButton;
     }
 }

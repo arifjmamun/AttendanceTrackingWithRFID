@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,8 @@ namespace Attendance.UI
         {
             logoutToolStripMenuItem.Enabled = false;
             DisableTabPage();
+            LoadComPorts();
+            BaudRate();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -75,13 +78,13 @@ namespace Attendance.UI
 
         private void DisableTabPage()
         {
-            connectionTab.Enabled = false;
+            providerNameTextBox.Enabled = false;
             attendanceTab.Enabled = false;
         }
 
         private void EnableTabPage()
         {
-            connectionTab.Enabled = true;
+            providerNameTextBox.Enabled = true;
             attendanceTab.Enabled = true;
         }
 
@@ -91,7 +94,26 @@ namespace Attendance.UI
             passowordTextBox.Clear();
         }
 
+        private void LoadComPorts()
+        {
+            foreach (string portName in SerialPort.GetPortNames())
+            {
+                comPortComboBox.Items.Add(portName);
+                if (portName == "COM4")
+                {
+                    comPortComboBox.SelectedItem = portName;
+                }
+            }
+        }
 
-        
+        private void BaudRate()
+        {
+            List<string> baudRates = new List<string>
+            {
+                "2400", "4800", "9600", "14400", "19200", "28800", "38400", "57600", "115200"
+            };
+            baudRateComboBox.DataSource = baudRates;
+            baudRateComboBox.SelectedItem = baudRates[2];
+        }
     }
 }
