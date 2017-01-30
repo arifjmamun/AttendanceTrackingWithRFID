@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Attendance.Model;
+using MySql.Data.MySqlClient;
 
 namespace Attendance.DAL
 {
@@ -13,14 +15,20 @@ namespace Attendance.DAL
         {
             try
             {
-                const string query = @"SELECT COUNT(*) FROM admin_info WHERE ap_user_id = @UserId AND user_passcode = @Password";
+                const string query =
+                    @"SELECT COUNT(*) FROM admin_info WHERE ap_user_id = @UserId AND user_passcode = @Password";
                 Connection.Open();
                 Command.CommandText = query;
                 Command.Parameters.Clear();
                 Command.Parameters.AddWithValue("@UserId", admin.UserId);
                 Command.Parameters.AddWithValue("@Password", admin.Password);
-                int countUser =  Convert.ToInt32(Command.ExecuteScalar());
+                int countUser = Convert.ToInt32(Command.ExecuteScalar());
                 return countUser;
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show(@"Connection Problem. Check Again.");
+                return 0;
             }
             finally
             {

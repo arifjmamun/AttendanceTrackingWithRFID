@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Attendance.BLL;
@@ -19,10 +20,15 @@ namespace Attendance.UI
     {
         AdminManager _adminManager = new AdminManager();
         AttendanceManager _attendanceManager = new AttendanceManager();
+        public static SerialPort port;
+        private BackgroundWorker hardWorker;
+
+        private Thread readThread = null;
 
         public EmployeeAttendanceTracking()
         {
             InitializeComponent();
+            hardWorker = new BackgroundWorker();
         }
 
         private void EmployeeAttendanceTracking_Load(object sender, EventArgs e)
@@ -114,6 +120,40 @@ namespace Attendance.UI
             };
             baudRateComboBox.DataSource = baudRates;
             baudRateComboBox.SelectedItem = baudRates[2];
+        }
+
+        private void connectButton_Click(object sender, EventArgs e)
+        {
+            IContainer components = new Container();
+            port = new System.IO.Ports.SerialPort(components);
+            port.PortName = comPortComboBox.SelectedItem.ToString();
+            port.BaudRate = Int32.Parse(baudRateComboBox.SelectedItem.ToString());
+            port.DtrEnable = true;
+            port.ReadTimeout = 5000;
+            port.WriteTimeout = 500;
+            port.Open();
+
+            readThread = new Thread(new ThreadStart(this.Read));
+            readThread.Start();
+            this.hardWorker.RunWorkerAsync();
+
+            connectButton.Enabled = false;
+        }
+
+        private void Read()
+        {
+            while (port.IsOpen)
+            {
+                try
+                {
+                    string message = port.ReadLine();
+                    MessageBox.Show(message);
+                }
+                catch (TimeoutException)
+                {
+                    
+                }
+            }
         }
     }
 }
