@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Attendance.BLL;
 using Attendance.Model;
+using Attendance.ViewModel;
 
 namespace Attendance.UI
 {
@@ -37,6 +38,13 @@ namespace Attendance.UI
             DisableTabPage();
             LoadComPorts();
             BaudRate();
+            //TestSomething();
+        }
+
+        private void TestSomething()
+        {
+            MessageBox.Show(DateTime.Now.Month.ToString() +" "+ DateTime.Now.Year.ToString());
+            MessageBox.Show(DateTime.Now.ToString("dddd"));
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -46,7 +54,7 @@ namespace Attendance.UI
 
         private void EmployeeAttendanceTracking_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -146,8 +154,10 @@ namespace Attendance.UI
             {
                 try
                 {
-                    string message = port.ReadLine();
-                    MessageBox.Show(message);
+                    string rfid = port.ReadLine();
+                    //MessageBox.Show(rfid);
+                    EmployeeProfileRfid employeeProfileRfid = _attendanceManager.AssignAttendanceInfo(rfid);
+
                     Task.Delay(1000);
                 }
                 catch (TimeoutException)

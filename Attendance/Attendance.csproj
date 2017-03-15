@@ -72,6 +72,7 @@
     <Compile Include="UI\EmployeeAttendanceTracking.Designer.cs">
       <DependentUpon>EmployeeAttendanceTracking.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\EmployeeProfileRfid.cs" />
     <EmbeddedResource Include="EmployeeAttendance.resx">
       <DependentUpon>EmployeeAttendance.cs</DependentUpon>
     </EmbeddedResource>
