@@ -8,9 +8,11 @@ namespace Attendance.ViewModel
 {
     class EmployeeProfileRfid
     {
+        public string ProfileImage { get; set; }
         public string EmployeeName { get; set; }
         public string EmployeeId { get; set; }
         public string AttendanceStatus { get; set; }
         public string TimeAndDate { get; set; }
+        public string Status { get; set; }
     }
 }
