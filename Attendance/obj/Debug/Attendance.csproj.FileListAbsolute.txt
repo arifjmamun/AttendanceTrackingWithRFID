@@ -10,3 +10,15 @@ H:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.csproj
 H:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.exe
 H:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.pdb
 H:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\bin\Debug\Attendance.exe.config
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.exe
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.pdb
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\bin\Debug\Attendance.exe
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\bin\Debug\Attendance.pdb
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\bin\Debug\Microsoft.CSharp.dll
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\bin\Debug\MySql.Data.dll
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.EmployeeAttendanceForm.resources
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.Properties.Resources.resources
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.UI.EmployeeAttendanceTracking.resources
+C:\xampp\htdocs\EPS_Attendance\Attendance\Attendance\obj\Debug\Attendance.csproj.GenerateResource.Cache

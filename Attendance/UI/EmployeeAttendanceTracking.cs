@@ -125,7 +125,7 @@ namespace Attendance.UI
         private void connectButton_Click(object sender, EventArgs e)
         {
             IContainer components = new Container();
-            port = new System.IO.Ports.SerialPort(components);
+            port = new SerialPort(components);
             port.PortName = comPortComboBox.SelectedItem.ToString();
             port.BaudRate = Int32.Parse(baudRateComboBox.SelectedItem.ToString());
             port.DtrEnable = true;
@@ -148,6 +148,7 @@ namespace Attendance.UI
                 {
                     string message = port.ReadLine();
                     MessageBox.Show(message);
+                    Task.Delay(1000);
                 }
                 catch (TimeoutException)
                 {
