@@ -30,7 +30,7 @@ namespace Attendance.DAL
         {
             try
             {
-                const string query = @"SELECT COUNT(*) FROM rfid_info WHERE rfid = @rfid";
+                const string query = @"SELECT COUNT(*) FROM rfid_info WHERE rfid_id = @rfid";
                 Connection.Open();
                 Command.CommandText = query;
                 Command.Parameters.Clear();
@@ -43,8 +43,6 @@ namespace Attendance.DAL
                 Connection.Close();
             }
         }
-
-
 
         internal int IsWeekend(string day)
         {
@@ -107,7 +105,7 @@ namespace Attendance.DAL
         {
             try
             {
-                const string query = @"SELECT user_id FROM rfid_info WHERE rfid = @rfid";
+                const string query = @"SELECT user_id FROM rfid_info WHERE rfid_id = @rfid";
                 Connection.Open();
                 Command.CommandText = query;
                 Command.Parameters.Clear();
@@ -147,7 +145,7 @@ namespace Attendance.DAL
             }
         }
 
-        public int AddLeavingStatus(EmployeeAttendance employeeAttendance)
+        public int AddEntranceStatus(EmployeeAttendance employeeAttendance)
         {
             try
             {
@@ -194,6 +192,26 @@ namespace Attendance.DAL
                 };
                 Reader.Close();
                 return employeeProfileRfid;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        public int AddLeavingStatus(EmployeeAttendance employeeAttendance)
+        {
+            try
+            {
+                const string query = @"UPDATE employee_attendance_info SET leaving_time = @leavingTime WHERE user_id = @userId AND local_time = @localTime";
+                Connection.Open();
+                Command.CommandText = query;
+                Command.Parameters.Clear();
+                Command.Parameters.AddWithValue("@userId", employeeAttendance.UserId);
+                Command.Parameters.AddWithValue("@leavingTime", employeeAttendance.LeavingTime);
+                Command.Parameters.AddWithValue("@localTime", employeeAttendance.LocalTime);
+                int count = Command.ExecuteNonQuery();
+                return count;
             }
             finally
             {

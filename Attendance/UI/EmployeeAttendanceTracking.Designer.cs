@@ -49,7 +49,7 @@
             this.employeeNameLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.profileImageBox = new System.Windows.Forms.PictureBox();
             this.providerNameTextBox = new System.Windows.Forms.TabPage();
             this.disconnectButton = new System.Windows.Forms.Button();
             this.connectButton = new System.Windows.Forms.Button();
@@ -83,12 +83,14 @@
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label16 = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.employeeAttendanceTabControl.SuspendLayout();
             this.authenticationTab.SuspendLayout();
             this.authenticationGroupBox.SuspendLayout();
             this.attendanceTab.SuspendLayout();
             this.attendanceGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profileImageBox)).BeginInit();
             this.providerNameTextBox.SuspendLayout();
             this.dbConnectionConfigGroupBox.SuspendLayout();
             this.serialPortConfigGroupBox.SuspendLayout();
@@ -225,15 +227,17 @@
             // 
             // attendanceGroupBox
             // 
+            this.attendanceGroupBox.Controls.Add(this.statusLabel);
             this.attendanceGroupBox.Controls.Add(this.timeAndDateLabel);
             this.attendanceGroupBox.Controls.Add(this.employeeIdLabel);
+            this.attendanceGroupBox.Controls.Add(this.label16);
             this.attendanceGroupBox.Controls.Add(this.label8);
             this.attendanceGroupBox.Controls.Add(this.attendanceLabelStatus);
             this.attendanceGroupBox.Controls.Add(this.label7);
             this.attendanceGroupBox.Controls.Add(this.employeeNameLabel);
             this.attendanceGroupBox.Controls.Add(this.label6);
             this.attendanceGroupBox.Controls.Add(this.label5);
-            this.attendanceGroupBox.Controls.Add(this.pictureBox1);
+            this.attendanceGroupBox.Controls.Add(this.profileImageBox);
             this.attendanceGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.attendanceGroupBox.Location = new System.Drawing.Point(8, 6);
             this.attendanceGroupBox.Name = "attendanceGroupBox";
@@ -310,15 +314,15 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Employee Name";
             // 
-            // pictureBox1
+            // profileImageBox
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 160);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.profileImageBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.profileImageBox.Location = new System.Drawing.Point(24, 36);
+            this.profileImageBox.Name = "profileImageBox";
+            this.profileImageBox.Size = new System.Drawing.Size(160, 160);
+            this.profileImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profileImageBox.TabIndex = 0;
+            this.profileImageBox.TabStop = false;
             // 
             // providerNameTextBox
             // 
@@ -631,6 +635,23 @@
             this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem1.Text = "About";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(34, 228);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(61, 22);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Status";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(110, 228);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 22);
+            this.statusLabel.TabIndex = 4;
+            // 
             // EmployeeAttendanceTracking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -654,7 +675,7 @@
             this.attendanceTab.ResumeLayout(false);
             this.attendanceGroupBox.ResumeLayout(false);
             this.attendanceGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profileImageBox)).EndInit();
             this.providerNameTextBox.ResumeLayout(false);
             this.providerNameTextBox.PerformLayout();
             this.dbConnectionConfigGroupBox.ResumeLayout(false);
@@ -706,7 +727,7 @@
         private System.Windows.Forms.Label employeeNameLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox profileImageBox;
         private System.Windows.Forms.ComboBox comPortComboBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox baudRateComboBox;
@@ -725,5 +746,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button applyDbConfigButton;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label label16;
     }
 }

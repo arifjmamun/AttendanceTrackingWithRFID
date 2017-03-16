@@ -155,10 +155,19 @@ namespace Attendance.UI
                 try
                 {
                     string rfid = port.ReadLine();
+                    rfid = rfid.Replace("\r", "");
+                    if (!string.IsNullOrEmpty(rfid) && rfid.All(char.IsDigit))
+                    {
+                        EmployeeProfileRfid employeeProfileRfid = _attendanceManager.AssignAttendanceInfo(rfid);
+                        employeeNameLabel.Text = employeeProfileRfid.EmployeeName;
+                        employeeIdLabel.Text = employeeProfileRfid.EmployeeId;
+                        attendanceLabelStatus.Text = employeeProfileRfid.AttendanceStatus;
+                        timeAndDateLabel.Text = employeeProfileRfid.TimeAndDate;
+                        profileImageBox.ImageLocation = employeeProfileRfid.ProfileImage;
+                        statusLabel.Text = employeeProfileRfid.Status;
+                    }
                     //MessageBox.Show(rfid);
-                    EmployeeProfileRfid employeeProfileRfid = _attendanceManager.AssignAttendanceInfo(rfid);
-
-                    Task.Delay(1000);
+                    Task.Delay(3000);
                 }
                 catch (TimeoutException)
                 {

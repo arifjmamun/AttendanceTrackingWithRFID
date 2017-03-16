@@ -41,7 +41,22 @@ namespace Attendance.BLL
 
         private EmployeeProfileRfid AddLeavingStatus(string rfid)
         {
-            throw new NotImplementedException();
+            EmployeeAttendance employeeAttendance = new EmployeeAttendance()
+            {
+                UserId = GetUserIdByRfid(rfid),
+                LeavingTime = DateTime.Now.ToString("HH:mm:ss"),
+                LocalTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            };
+
+            int countRow = _attendanceGateway.AddLeavingStatus(employeeAttendance);
+            if (countRow > 0)
+            {
+                EmployeeProfileRfid employeeProfileRfid = _attendanceGateway.GetEmployeeInfo(rfid);
+                employeeProfileRfid.AttendanceStatus = "Leaving";
+                employeeProfileRfid.TimeAndDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                return employeeProfileRfid;
+            }
+            return new EmployeeProfileRfid { Status = "Something Wrong!" };
         }
 
         private EmployeeProfileRfid AddEntranceStatus(string rfid)
@@ -60,7 +75,7 @@ namespace Attendance.BLL
                 Fine = nowTime <= entryTime ? 0 : 50
             };
 
-            int countRow = _attendanceGateway.AddLeavingStatus(employeeAttendance);
+            int countRow = _attendanceGateway.AddEntranceStatus(employeeAttendance);
             if (countRow > 0)
             {
                 EmployeeProfileRfid employeeProfileRfid = _attendanceGateway.GetEmployeeInfo(rfid);
