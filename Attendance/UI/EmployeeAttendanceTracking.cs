@@ -38,6 +38,7 @@ namespace Attendance.UI
             DisableTabPage();
             LoadComPorts();
             BaudRate();
+            System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
             //TestSomething();
         }
 
@@ -167,7 +168,7 @@ namespace Attendance.UI
                         statusLabel.Text = employeeProfileRfid.Status;
                     }
                     //MessageBox.Show(rfid);
-                    Task.Delay(3000);
+                    Task.Delay(10000);
                 }
                 catch (TimeoutException)
                 {
