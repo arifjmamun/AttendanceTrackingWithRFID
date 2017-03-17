@@ -45,7 +45,7 @@ namespace Attendance.BLL
             {
                 UserId = GetUserIdByRfid(rfid),
                 LeavingTime = DateTime.Now.ToString("HH:mm:ss"),
-                LocalTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+                LocalDate = DateTime.Now.ToString("yyyy-MM-dd")
             };
 
             int countRow = _attendanceGateway.AddLeavingStatus(employeeAttendance);
@@ -70,7 +70,7 @@ namespace Attendance.BLL
                 Years = DateTime.Now.Year.ToString(),
                 Months = DateTime.Now.ToString("MMMM"),
                 Day = DateTime.Now.ToString("dddd"),
-                LocalTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                LocalDate = DateTime.Now.ToString("yyyy-MM-dd"),
                 Status = nowTime <= entryTime ? 1 : 0,
                 Fine = nowTime <= entryTime ? 0 : 50
             };
@@ -131,8 +131,8 @@ namespace Attendance.BLL
         private bool IsAttendanceStatusExsits(string rfid)
         {
             string userId = _attendanceGateway.GetUserIdByRfid(rfid);
-            string localTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            int countRow = _attendanceGateway.IsAttendanceStatusExsits(userId, localTime);
+            string localDate = DateTime.Now.ToString("yyyy-MM-dd");
+            int countRow = _attendanceGateway.IsAttendanceStatusExsits(userId, localDate);
             return countRow > 0;
         }
 

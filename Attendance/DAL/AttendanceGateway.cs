@@ -82,16 +82,16 @@ namespace Attendance.DAL
             }
         }
 
-        public int IsAttendanceStatusExsits(string userId, string localTime)
+        public int IsAttendanceStatusExsits(string userId, string localDate)
         {
             try
             {
-                const string query = @"SELECT COUNT(*) FROM employee_attendance_info WHERE user_id = @userId AND local_time = @localTime";
+                const string query = @"SELECT COUNT(*) FROM employee_attendance_info WHERE user_id = @userId AND local_date = @localDate";
                 Connection.Open();
                 Command.CommandText = query;
                 Command.Parameters.Clear();
                 Command.Parameters.AddWithValue("@userId", userId);
-                Command.Parameters.AddWithValue("@localTime", localTime);
+                Command.Parameters.AddWithValue("@localDate", localDate);
                 int count = Convert.ToInt32(Command.ExecuteScalar());
                 return count;
             }
@@ -149,8 +149,8 @@ namespace Attendance.DAL
         {
             try
             {
-                const string query = @"INSERT INTO employee_attendance_info(user_id, entry_time, years, months, day, local_time, status, fine) 
-                                       VALUES(@userId, @entryTime, @years, @months, @day, @localTime, @status, @fine)";
+                const string query = @"INSERT INTO employee_attendance_info(user_id, entry_time, years, months, day, local_date, status, fine) 
+                                       VALUES(@userId, @entryTime, @years, @months, @day, @localDate, @status, @fine)";
                 Connection.Open();
                 Command.CommandText = query;
                 Command.Parameters.Clear();
@@ -159,7 +159,7 @@ namespace Attendance.DAL
                 Command.Parameters.AddWithValue("@years", employeeAttendance.Years);
                 Command.Parameters.AddWithValue("@months", employeeAttendance.Months);
                 Command.Parameters.AddWithValue("@day", employeeAttendance.Day);
-                Command.Parameters.AddWithValue("@localTime", employeeAttendance.LocalTime);
+                Command.Parameters.AddWithValue("@localDate", employeeAttendance.LocalDate);
                 Command.Parameters.AddWithValue("@status", employeeAttendance.Status);
                 Command.Parameters.AddWithValue("@fine", employeeAttendance.Fine);
                 int count = Command.ExecuteNonQuery();
@@ -203,13 +203,13 @@ namespace Attendance.DAL
         {
             try
             {
-                const string query = @"UPDATE employee_attendance_info SET leaving_time = @leavingTime WHERE user_id = @userId AND local_time = @localTime";
+                const string query = @"UPDATE employee_attendance_info SET leaving_time = @leavingTime WHERE user_id = @userId AND local_date = @localDate";
                 Connection.Open();
                 Command.CommandText = query;
                 Command.Parameters.Clear();
                 Command.Parameters.AddWithValue("@userId", employeeAttendance.UserId);
                 Command.Parameters.AddWithValue("@leavingTime", employeeAttendance.LeavingTime);
-                Command.Parameters.AddWithValue("@localTime", employeeAttendance.LocalTime);
+                Command.Parameters.AddWithValue("@localDate", employeeAttendance.LocalDate);
                 int count = Command.ExecuteNonQuery();
                 return count;
             }

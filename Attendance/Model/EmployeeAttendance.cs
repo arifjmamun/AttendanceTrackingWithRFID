@@ -15,7 +15,7 @@ namespace Attendance.Model
         public string Years { get; set; }
         public string Months { get; set; }
         public string Day { get; set; }
-        public string LocalTime { get; set; }
+        public string LocalDate { get; set; }
         public int Status { get; set; }
         public decimal Fine { get; set; }
     }
